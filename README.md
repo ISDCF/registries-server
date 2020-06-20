@@ -11,7 +11,7 @@ The running service may be found here:
 
 ---
 
-### Installation
+## Installation
 
 To run locally:
 
@@ -23,7 +23,7 @@ $ export REGISTRY_REPOSITORY="https://github.com/ISDCF/registries/"
 $ npm start
 ```
 
-## Deploy to AWS Elastic Beanstalk
+### Deploy to AWS Elastic Beanstalk
 
 ```shell
 $ export AWS_ACCESS_KEY_ID=<your secret>
@@ -33,7 +33,7 @@ $ export REGISTRY_REPOSITORY="https://github.com/ISDCF/registries/"
 $ npm run deploy
 ```
 
-## Deploy to AWS Elastic Beanstalk (using [Terraform](https://www.terraform.io))
+### Deploy to AWS Elastic Beanstalk (using [Terraform](https://www.terraform.io))
 
 ```shell
 $ rm -rf node_modules/
