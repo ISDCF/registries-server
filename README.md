@@ -3,9 +3,11 @@ ISDCF Registries Server
 
 _EXPERIMENTAL_
 
-A JSON-based registries server synchronized to the registries found at:
+A JSON-based registries server synchronized to the [ISDCF Registries](https://github.com/ISDCF/registries/).
 
- * https://github.com/ISDCF/registries/
+The running service may be found here:
+
+   * http://registry.isdcf.com
 
 ---
 
@@ -21,7 +23,7 @@ $ export REGISTRY_REPOSITORY="https://github.com/ISDCF/registries/"
 $ npm start
 ```
 
-### Deploy to AWS Elastic Beanstalk
+## Deploy to AWS Elastic Beanstalk
 
 ```shell
 $ export AWS_ACCESS_KEY_ID=<your secret>
@@ -31,7 +33,7 @@ $ export REGISTRY_REPOSITORY="https://github.com/ISDCF/registries/"
 $ npm run deploy
 ```
 
-### Deploy to AWS Elastic Beanstalk (using [Terraform](https://www.terraform.io))
+## Deploy to AWS Elastic Beanstalk (using [Terraform](https://www.terraform.io))
 
 ```shell
 $ rm -rf node_modules/
