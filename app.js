@@ -17,6 +17,7 @@ const sendRegistry = (res, reg) => {
     .send({
       schemaVersion: reg.schemaVersion,
       isLatestData: reg.isHead,
+      lastModified: reg.date.toISOString(),
       data: reg.data,
     })
 }
