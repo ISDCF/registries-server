@@ -1,0 +1,58 @@
+name: ISDCF Registries Server
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    
+    - name: Node ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Installing NPM
+      run: npm install
+
+    - name: Building application
+      run: npm install
+
+    - name: Generate deployment package
+      run: zip -r deploy.zip * -x "**node_modules**"
+
+    - name: Get timestamp
+      uses: gerred/actions/current-time@master
+      id: current-time
+
+    - name: Run string replace
+      uses: frabert/replace-string-action@master
+      id: format-time
+      with:
+        pattern: '[:\.]+'
+        string: "${{ steps.current-time.outputs.time }}"
+        replace-with: '-'
+        flags: 'g'
+
+    - name: Beanstalk Deploy for app
+      uses: einaregilsson/beanstalk-deploy@v10
+      with:
+        aws_access_key: ${{secrets.AWS_ACCESS_KEY_ID}}
+        aws_secret_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+        application_name: ISDCF-Registry-Server
+        environment_name: ISDCF-Registry-Server-env
+        region: us-east-2
+        version_label: "isdcf-registry-server-${{ steps.format-time.outputs.replaced }}"
+        version_description: ${{github.SHA}}
+        deployment_package: deploy.zip
+
+    - name: Deployed!
+      run: echo Successfully deployed to AWS ELB

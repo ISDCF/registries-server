@@ -3,13 +3,11 @@
   "version": "1.0.1",
   "description": "ISDCF Registries Service",
   "scripts": {
-    "deploy": "./scripts/deploy.js",
     "start": "./app.js"
   },
   "author": "InterSociety Digital Cinema Forum (ISDCF) <info@isdcf.com>",
   "license": "CC-BY-4.0",
   "dependencies": {
-    "express": "^4.17.1",
-    "node-aws-beanstalk": "^3.4.9"
+    "express": "^4.17.1"
   }
 }
