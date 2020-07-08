@@ -3,7 +3,7 @@ name: ISDCF Registries Server
 on:
   push:
     branches:
-    - issues/0001-deploy-updates
+    - master
 
 jobs:
   build:
@@ -47,12 +47,12 @@ jobs:
       with:
         aws_access_key: ${{secrets.AWS_ACCESS_KEY_ID}}
         aws_secret_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-        application_name: ISDCF-Registry-Server-EBS
-        environment_name: ISDCF-Registry-Server-EBS-env
-        region: us-west-1
+        application_name: ISDCF-Registry-Server
+        environment_name: ISDCF-Registry-Server-env
+        region: us-east-2
         version_label: "isdcf-registry-server-${{ steps.format-time.outputs.replaced }}"
         version_description: ${{github.SHA}}
         deployment_package: deploy.zip
 
     - name: Deployed!
-      run: echo App deployed to AWS ELB
+      run: echo Succfully deployed to AWS ELB
