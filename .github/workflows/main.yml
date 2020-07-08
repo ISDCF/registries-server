@@ -55,4 +55,4 @@ jobs:
         deployment_package: deploy.zip
 
     - name: Deployed!
-      run: echo Succfully deployed to AWS ELB
+      run: echo Successfully deployed to AWS ELB
