@@ -45,8 +45,8 @@ jobs:
     - name: Beanstalk Deploy for app
       uses: einaregilsson/beanstalk-deploy@v10
       with:
-        aws_access_key: ${{secrets.AWS_ACCESS_KEY}}
-        aws_secret_key: ${{secrets.AWS_SECRET_KEY}}
+        aws_access_key: ${{secrets.AWS_ACCESS_KEY_ID}}
+        aws_secret_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
         application_name: ISDCF-Registry-Server-EBS
         environment_name: ISDCF-Registry-Server-EBS-env
         region: us-west-1
