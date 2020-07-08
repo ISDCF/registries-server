@@ -7,7 +7,7 @@ A JSON-based registries server synchronized to the [ISDCF Registries](https://gi
 
 The running service may be found here:
 
-   * http://registry.isdcf.com
+   * https://registry.isdcf.com
 
 ---
 
