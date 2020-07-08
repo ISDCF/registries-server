@@ -51,6 +51,7 @@ jobs:
         environment_name: ISDCF-Registry-Server-EBS-env
         region: us-west-1
         version_label: "isdcf-registry-server-${{ steps.format-time.outputs.replaced }}"
+        version_description: ${{github.SHA}}
         deployment_package: deploy.zip
 
     - name: Deployed!
