@@ -1,12 +1,18 @@
 {
   "name": "registries-server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ISDCF Registries Service",
   "scripts": {
+    "test": "mocha --timeout 10000",
     "start": "./app.js"
   },
   "author": "InterSociety Digital Cinema Forum (ISDCF) <info@isdcf.com>",
   "license": "CC-BY-4.0",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.0.1"
+  },
   "dependencies": {
     "express": "^4.17.1"
   }
