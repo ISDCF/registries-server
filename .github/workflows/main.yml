@@ -1,4 +1,4 @@
-name: ISDCF Registries Server
+name: Deploy to AWS/EBS
 
 on:
   push:
