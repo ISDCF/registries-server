@@ -9,6 +9,10 @@ The running service may be found here:
 
    * https://registry.isdcf.com
 
+### Environment
+
+The registry feeding this API may be optionally overridden with the `REGISTRY_REPOSITORY` environment variable.
+
 ---
 
 ## Installation
@@ -19,7 +23,6 @@ To run locally:
 $ git clone <repo>
 $ cd registry-server
 $ npm install
-$ export REGISTRY_REPOSITORY="https://github.com/ISDCF/registries/"
 $ npm start
 ```
 
@@ -30,7 +33,6 @@ $ rm -rf node_modules/
 $ cd tf
 $ export AWS_ACCESS_KEY_ID=<your secret>
 $ export AWS_SECRET_ACCESS_KEY=<your secret>
-$ export REGISTRY_REPOSITORY="https://github.com/ISDCF/registries/"
 $ terraform init
 $ terraform plan
 $ terraform apply
