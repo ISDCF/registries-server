@@ -20,9 +20,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Installing NPM
-      run: npm install
-
     - name: Building application
       run: npm install
 
