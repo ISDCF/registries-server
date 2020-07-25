@@ -11,7 +11,7 @@ The running service may be found here:
 
 ### Environment
 
-The registry feeding this API may be optionally overridden with the `REGISTRY_REPOSITORY` environment variable.
+The registry feeding this API may be changed in `package.json` or optionally overridden with the `REGISTRY_REPOSITORY` environment variable.
 
 ---
 
